@@ -1,6 +1,7 @@
-import Card from "@/Components/Card";
-import { CardContent, CardMedia, Typography, Grid } from "@mui/material";
 import { Suspense } from "react";
+import dynamic from "next/dynamic";
+
+const CardWithCustomLoading = dynamic(() => import("@/Components/Card"));
 
 export default async function HomePage() {
   const technologies = await new Promise((resolve) =>
@@ -50,7 +51,7 @@ export default async function HomePage() {
       <div className="flex gap-4 py-4 px-2">
         <Suspense fallback={"loading..."}>
           {technologies.map((tech, index) => (
-            <Card
+            <CardWithCustomLoading
               key={index}
               description={tech.description}
               image={tech.image}

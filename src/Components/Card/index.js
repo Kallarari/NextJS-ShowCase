@@ -4,6 +4,7 @@ import {
   Typography,
 } from "@mui/material";
 import Image from 'next/image'
+import nextImage from '../../../public/next.svg'
 
 export default function CardComponent({ name, description, image }) {
   return (

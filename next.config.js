@@ -1,7 +1,11 @@
 module.exports = {
   images: {
-    loader: 'custom',
-    loaderFile: './public/vercel.svg',
+    localPatterns: [
+      {
+        pathname: './public/**',
+        search: '',
+      },
+    ],
     remotePatterns: [
       {
         protocol: "https",
